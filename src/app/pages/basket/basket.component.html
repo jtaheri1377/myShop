@@ -1,0 +1,48 @@
+<div class="my-container">
+  <div class="box">
+    <div class="heading">
+      <div class="title">
+        <i class="fa  fa-shopping-cart "></i>
+        <div>سبد خرید</div>
+      </div>
+      <!-- <div class="addresses">
+        <img src="./../../../assets/images/location3.png" alt="">
+        <div>آدرس</div>
+      </div> -->
+    </div>
+
+    <div class="products">
+      <div class="product" *ngFor="let item of products">
+        <img [src]="item.img" [routerLink]="['/detail', item.pId]" alt="">
+        <div class="specifies">
+          <div class="name">{{item.name}}</div>
+          <div class="quantity-and-price">
+            <div class="quantity">
+              <div class="plus" (click)="increase(item.id)">+</div>
+              <div class="digit">{{item.amount}}</div>
+              <div class="delete" (click)="delete(item.id)" *ngIf="deleteIcon(item.amount)">
+                <i class="fa fa-trash"></i>
+              </div>
+              <div class="minus" (click)="decrease(item.id)" *ngIf="!deleteIcon(item.amount)">-</div>
+            </div>
+
+            <div class="price-and-off">
+              <div class="off" *ngIf="item.off">{{item.off}} %</div>
+              <div class="other-price" *ngIf="item.otherPrice">{{item.otherPrice | number:'1.0'}}</div>
+              <div class="price">{{item.price | number: '1.0'}} تومان</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="buy-buttons">
+    <div class="specify-of-all">
+      <div class="all-products-quantity">تعداد کل: {{pdLength}}</div>
+      <div class="all-products-price">جمع کل: {{getSum() | number:'1.0'}} تومان</div>
+    </div>
+    <button class="buyBtn"> تکمیل سفارش</button>
+  </div>
+</div>
+

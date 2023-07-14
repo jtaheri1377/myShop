@@ -1,0 +1,16 @@
+<div class="fullpage-container">
+  <div class="closer" (click)="closeDialog()"></div>
+  <div class="body">
+    <div class="heading">
+      {{title}}
+    </div>
+    <div class="items">
+      <ul>
+        <li *ngFor="let item of items">
+          <input type="radio" name="item" (input)="onRadioInput($event)" id="{{item.text}}">
+          <label for="{{item.text}}">{{item.text}}</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

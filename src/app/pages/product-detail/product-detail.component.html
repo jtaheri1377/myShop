@@ -1,0 +1,98 @@
+<div class="mycontainer" #target>
+  <div class="detail-container">
+    <div class="image-container">
+      <div class="image-viewer">
+        <img [src]="mainImage">
+      </div>
+      <swiper class="other-images" [slidesPerView]="'auto'" [mousewheel]="true" [navigation]="true">
+        <ng-template class="slide" swiperSlide *ngFor="let img of images">
+          <div class="box">
+            <img [src]="img" (click)="mainImage=img">
+          </div>
+        </ng-template>
+      </swiper>
+      <button class="add-to-bag-btn" (click)="addToBag()">
+        <div class="title" *ngIf="!addedToBag">
+          <i class="fa fa-shopping-cart"></i>
+          افزودن به سبد خرید
+        </div>
+        <div class="title bg-success" *ngIf="addedToBag">
+          <i class="fa fa-check-circle"></i>
+          به سبد خرید افزوده شد
+        </div>
+      </button>
+    </div>
+
+
+    <div class="specifies-container">
+      <div class="heading">
+        <i class="fa fa-list"></i>
+        مشخصات
+      </div>
+      <ul>
+        <li *ngFor="let specify of productSpecifies">
+          <div class="title">
+            <i class="fa fa-check-square"></i>
+            {{specify.label}}
+          </div>
+          <div class="value">
+            {{specify.value}}
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <!-- Normal Slider Container -->
+    <div class="normal-slider-container">
+      <div class="heading">
+        <div class="title">موارد دیگر</div>
+        <div class="see-all-box" [routerLink]="['/filter']">
+          <div>مشاهده همه</div>
+          <li class="fa fa-chevron-left"></li>
+        </div>
+      </div>
+      <swiper class="normal-swiper" [slidesPerView]="'auto'">
+        <ng-template class="normal-slide" swiperSlide *ngFor="let product of suggestions">
+          <div class="box" (click)="navigate(product.id)" (click)="scrollToTop(target)">
+            <img class="slide-img" [src]="product.img" alt="">
+            <!-- <img [src]="product.images[0]" routerLink="/detail/{{product.id}}"> -->
+            <div class="specifies">
+              <div class="name">{{product.name}}</div>
+              <div class="price">{{product.price | number:'1.0'}} تومان</div>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <!-- End of Normal Slider Container -->
+
+    <div class="comments-container">
+      <div class="heading">
+        <i class="fa fa-comments"></i>
+        دیدگاه کاربران
+      </div>
+      <div class="commentBox" *ngFor="let comment of comments">
+        <div class="person-circle">
+          <i class="fa fa-user-circle"></i>
+        </div>
+        <div class="date-Text">
+          <div class="date">{{comment.date}}</div>
+          <div class="text">{{comment.text}}</div>
+          <div class="like-and-dislike">
+            <div class="like">
+              <i class="fa fa-thumbs-up"></i>
+              {{comment.like}}
+            </div>
+            <div class="dislike">
+              <i class="fa fa-thumbs-down"></i>
+              {{comment.dislike}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="nv" (mouseenter)="onNavbarEnter(true)" (blur)="onNavbarEnter(true)" (mouseleave)="onNavbarEnter(true)">
+  <div class="right-side">
+    <div class="menu-icon-box" *ngIf="homeIcon()">
+      <i class="fa fa-home" routerLink="" *ngIf="homeIcon()"></i>
+      <!-- ******* I'll use it after ****** -->
+      <!-- <i class="fa fa-bars" (click)="SidebarIconClicked()"></i> -->
+      <!-- ******* I'll use it after ****** -->
+    </div>
+    <div class="logo-box" routerLink="">
+      <img src="./../../../assets/images/logo.JPG" class="logo">
+    </div>
+
+    <div class="search-box" (click)="onNavbarEnter(false)">
+      <form #SearchFrm (submit)="onSubmit()" [formGroup]="searchForm" (input)="SearchInput($event)" autocomplete="off">
+        <input type="text" formControlName="searchText" [ngModel]="filterText" placeholder="جستجوی کالا ...">
+        <i class=" search-icon fa fa-search"></i>
+      </form>
+
+      <div overlay class="suggestion_Box" (blur)="onNavbarEnter(true)" tabindex="-1" [isOpen]="suggestionVisible">
+        <div class="images">
+          <img [src]="suggestionBoxImg_img" [routerLink]="['./detail', suggestionBoxImg_id]" alt="">
+          <!-- <img src="./../../../assets/images/logo_black.JPG" alt=""> -->
+        </div>
+
+        <hr>
+        <div class="titleBox">
+          <i class="fa fa-fire"></i>
+          <div class="text">جستجو های پرطرفدار</div>
+        </div>
+        <swiper class="suggestion-swiper" [mousewheel]="true" [slidesPerView]="'auto'">
+          <ng-template swiperSlide class="suggestion" *ngFor="let item of suggestions">
+            <div class="box" (click)="onSuggestionClick(item.name);onNavbarEnter(false);$event.stopPropagation()">
+              <i class="fa fa-search"></i>
+              <div class="text">{{item.name}}</div>
+            </div>
+          </ng-template>
+
+        </swiper>
+      </div>
+    </div>
+  </div>
+  <div class="location-icon-box">
+    <div class="location-icon">
+      <img src="./../../../assets/images/location3.png" alt="" (mouseenter)="onLocationIconClick()" (click)="onLocationIconClick()">
+    </div>
+  </div>
+  |
+  <div class="bag-icon-box" routerLinkActive="active" routerLink="/basket">
+    <div class="bag-icon">
+      <i class="fa fa-shopping-cart"></i>
+      <label class="badge">{{basketCount}}</label>
+    </div>
+  </div>
+</div>

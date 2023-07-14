@@ -1,0 +1,11 @@
+<div class="filter-navbar-container">
+  <swiper class="filter-swiper" [autoplay]="true" [slidesPerView]="'auto'">
+    <ng-template class="filter-box" swiperSlide *ngFor="let item of filter_items; let i=index">
+      <div class="box" [ngClass]="{SelectedItem: item.choosen}" (click)="onFilterItemClicked(item,false)">
+        <div class="text">{{item.choosen ? item.choosen : item.text}}</div>
+        <i class="fa fa-chevron-down" *ngIf="!item.choosen"></i>
+        <i class="fa fa-times-circle" (click)="onFilterItemClicked(item,true);$event.stopPropagation()" *ngIf="item.choosen"></i>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

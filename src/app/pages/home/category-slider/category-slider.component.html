@@ -1,0 +1,10 @@
+<div class="my-container">
+  <swiper class="category-swiper" [navigation]="true" [mousewheel]="true" [slidesPerView]="'auto'">
+    <ng-template class="category-box" swiperSlide *ngFor="let item of categories">
+      <div class="box" (click)="navigateTofilter(item.text)">
+        <img class="categoryImg" [src]="item.img" alt="">
+        <p class="title">{{item.text}}</p>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

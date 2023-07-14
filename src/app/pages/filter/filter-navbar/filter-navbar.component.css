@@ -1,0 +1,52 @@
+.filter-navbar-container{
+  width: 100%;
+  padding: 7px 0;
+  height: fit-content;
+}
+
+.filter-swiper{
+  background: rgb(255, 255, 255);
+  height: fit-content;
+}
+
+:host ::ng-deep .filter-box{
+  background: rgb(255, 255, 255);
+  width: fit-content;
+  padding: 5px;
+}
+
+:host ::ng-deep .filter-box .box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgb(200, 200, 200) !important;
+  padding: 8px;
+  border-radius: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+:host ::ng-deep .filter-box .box.SelectedItem{
+  border: 1px solid rgb(255, 135, 135) !important;
+  background: rgb(255, 234, 234);
+  color: rgb(95, 8, 8);
+  font-size: 15px;
+}
+
+
+:host ::ng-deep .filter-box .box.SelectedItem:hover{
+  background: rgb(255, 183, 183);
+}
+
+:host ::ng-deep .filter-box .box:hover{
+  /* border: 2px solid rgb(200, 200, 200) !important; */
+  background: rgb(250, 250, 250);
+  transition: all .4s;
+}
+
+app-modal-items{
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}

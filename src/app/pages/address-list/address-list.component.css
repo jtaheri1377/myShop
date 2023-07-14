@@ -1,0 +1,150 @@
+.mycontainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mycontainer app-navbar{
+  width: 100%;
+  height: fit-content;
+}
+
+.mycontainer .panel{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mycontainer .panel .heading{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 17px;
+  font-weight: 800;
+  color: crimson;
+  background: floralwhite;
+}
+
+.mycontainer .panel .heading i{
+  color: black;
+}
+
+.panel .list{
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+}
+
+
+.panel .address-item{
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: rgb(241, 241, 241);
+  box-shadow: 3px 3px 4px rgb(209, 209, 209);
+}
+
+.panel .address-item .title{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 8px;
+}
+
+.panel .address-item .title img{
+  width: 33px;
+  height: 33px;
+}
+
+.panel .address-item .btns{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+
+}
+
+.btns button{
+  padding: 7px 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  column-gap: 7px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: .23s all;
+}
+
+.btns .show-btn{
+  color: green;
+  border: 1px solid rgb(7, 105, 3) !important;
+}
+
+.btns .show-btn:hover{
+  color: white;
+  background: rgb(0, 138, 0);
+}
+
+.btns .edit-btn{
+  color: rgb(9, 0, 128);
+  border: 1px solid rgb(22, 3, 105) !important;
+}
+
+.btns .edit-btn:hover{
+  color: white;
+  background: rgb(11, 0, 223);
+}
+
+
+.btns .delete-btn{
+  color: rgb(184, 0, 0);
+  border: 1px solid rgb(187, 0, 0) !important;
+}
+
+.btns .delete-btn:hover{
+  color: white;
+  background: rgb(255, 73, 73);
+}
+
+
+@media (min-width: 700px) {
+  .panel .address-item{
+    width: calc(50% - 10px)
+  }
+}
+
+@media (min-width: 1200px) {
+  .panel .address-item{
+    width: calc(33.38% - 8px)
+  }
+}

@@ -1,0 +1,54 @@
+<div class="my-container">
+  <div class="black-background" (click)="closed()">
+    <div class="box" sidebar [open]="open" [maxWidth]="maxWidth" (click)="$event.stopPropagation()">
+      <!-- <button (click)="open=false"> close</button> -->
+      <div class="heading">
+        <img src="./../../../assets/images/logo.JPG" alt="">
+        <div class="title">BEST SHOP</div>
+      </div>
+      <hr class="titleHR">
+      <div class="items">
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/bag2.jpg" alt="">
+            <div class="text">موبایل و تبلت</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/bag1.jpg" alt="">
+            <div class="text">کنسول بازی خانگی</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/c4.jpg" alt="">
+            <div class="text">ساعت و اکسسوری</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/watch2.jpg" alt="">
+            <div class="text">لباس زنانه</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/sleep4.jpg" alt="">
+            <div class="text">لباس مردانه</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="background">
+            <img src="./../../../assets/images/shoes5.jpg" alt="">
+            <div class="text">مانتو و چادر</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

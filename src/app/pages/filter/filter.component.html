@@ -1,0 +1,9 @@
+<app-filter-navbar class="filter-navbar" *ngIf="hasProducts" [choosen]="choosen" (onChoose)="onChoosedItem($event)"></app-filter-navbar>
+<app-list [products]="products"></app-list>
+<div *ngIf="!hasProducts" class="nothing_found">
+  <img src="./../../../assets/images/nothings_found.png" alt="">
+</div>
+
+<app-modal-items overlay *ngIf="modal_visibility" [content]="filter_item" (close)="ondialogClosed($event)" class="dialog"
+  [isOpen]="modal_visibility">
+</app-modal-items>

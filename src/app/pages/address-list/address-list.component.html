@@ -1,0 +1,30 @@
+<div class="mycontainer">
+  <div class="panel">
+    <div class="heading">
+      <i class="fa fa-map-pin"></i>
+      <div>لیست آدرس ها</div>
+    </div>
+    <div class="list">
+      <div class="address-item" *ngFor="let item of addresses; let i=index">
+        <div class="title">
+          <img src="./../../../assets/images/location1.png" alt="">
+          <div class="text">نشانی {{i+1}} : ({{item.lat}} , {{item.lng}} )</div>
+        </div>
+        <div class="btns">
+          <button class="show-btn">
+            <i class="fa fa-eye"></i>
+            <div>نمایش</div>
+          </button>
+          <button class="edit-btn">
+            <i class="fa fa-edit"></i>
+            <div>ویرایش</div>
+          </button>
+          <button class="delete-btn">
+            <i class="fa fa-trash"></i>
+            <div>حذف</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

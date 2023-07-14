@@ -1,0 +1,15 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="my-container">
+  <div class="products">
+
+    <div class="product" [routerLink]="['/detail', item.id]" *ngFor="let item of products">
+      <img [src]="item.images[0]" alt="">
+      <div class="specifies">
+        <p class="name">{{item.name}}</p>
+        <p class="desc">{{item.desc}}</p>
+        <p class="price">{{item.price | number: '1.0'}} تومان</p>
+      </div>
+    </div>
+  </div>
+  <app-pagination *ngIf="hasProducts"></app-pagination>
+</div>

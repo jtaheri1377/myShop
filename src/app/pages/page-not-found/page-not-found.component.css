@@ -1,0 +1,10 @@
+app-navbar{
+  width: 100%;
+}
+
+img{
+  margin: auto;
+  width: 300px;
+  height: fit-content;
+  object-fit: cover;
+}

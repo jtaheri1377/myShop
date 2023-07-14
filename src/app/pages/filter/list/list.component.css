@@ -1,0 +1,126 @@
+/* list Container */
+.my-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+}
+
+.my-container .products{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap:7px;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  /* background: rgb(223, 222, 222); */
+}
+
+.products .product{
+  width: 100%;
+  height: 140px;
+  /* border-bottom: 1px solid rgb(168, 168, 168);
+  border-top: 1px solid rgb(134, 134, 134); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  box-shadow: 0 0 3px rgb(202, 202, 202);
+  cursor: pointer;
+}
+
+
+.products .product img{
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product .specifies{
+  width: calc(100% - 120px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product .specifies .name{
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(116, 116, 116);
+}
+
+.product .specifies .price{
+  font-size: 15px;
+  font-weight: 600;
+  color: red;
+}
+
+.product .specifies .desc{
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+  color: rgb(161, 161, 161);
+  text-align: justify;
+}
+
+
+app-pagination{
+  margin-top: 20px;
+}
+/* End of list Container */
+
+
+
+@media (min-width: 900px) {
+.my-container .products{
+  padding-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.products .product{
+  width: calc(50% - 7px);
+  height: 160px;
+}
+}
+
+
+
+@media (min-width: 1440px) {
+
+
+  .my-container .products{
+    padding-top: 10px;
+  }
+
+  .products .product{
+    width: calc(33.3% - 4.5px);
+  }
+
+
+}
+
+
+
+@media (min-width: 1920px) {
+
+
+  .my-container .products{
+    padding-top: 10px;
+  }
+
+  .products .product{
+    width: calc(25% - 5.6px);
+  }
+
+
+}

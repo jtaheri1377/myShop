@@ -1,0 +1,156 @@
+<div class="home">
+  <div class="mycontainer">
+    <!-- First slider carousel Section -->
+    <div class="first-slider-container" ondragstart="return false;">
+      <div class="right-box">
+        <img src="./../../../assets/images/stand-ad1.JPG">
+      </div>
+      <div class="first-slider">
+        <!--  [slidesPerView]="1" [spaceBetween]="500" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" -->
+        <!-- <swiper dir="rtl" [config]="swiperConfig"> -->
+        <swiper dir="rtl" [autoplay]="{delay: 1000}" [loop]="true">
+          <ng-template class="firstSwiperSlide" swiperSlide *ngFor="let item of firstSliderItems">
+            <img class="firstSliderImage" [routerLink]="['./detail', item.id]" [src]="item.img" alt="">
+          </ng-template>
+        </swiper>
+      </div>
+      <div class="left-box">
+        <img src="./../../../assets/images/stand-ad2.jpg">
+      </div>
+    </div>
+    <!-- End of First slider Carousel section -->
+    <!-- Titles -->
+    <div class="titles">
+      <swiper class="swiper" [slidesPerView]="'auto'" [mousewheel]="true" [spaceBetween]="10" [navigation]="true" dir="rtl">
+        <ng-template class="titles-swiper-slide" swiperSlide *ngFor="let title of titles">
+          <div class="titleBox" (click)="navigateToFilter(title.text)">
+            <img class="imageTitle" [src]="title.img">
+            <div class="titleText">{{title.text}}</div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <!-- End of Titles -->
+    <!-- Third ads Container -->
+    <div class="third-ads-container">
+      <div class="box-ad ">
+        <div class="big-item">
+          <img [src]="third_ads_big_items[0].img" [routerLink]="['detail', third_ads_big_items[0].id]" alt="">
+        </div>
+        <div class="small-items">
+          <img [src]="item.img" [routerLink]="['detail', item.id]" alt="" *ngFor="let item of third_ads_small_right_items">
+        </div>
+      </div>
+      <div class="box-ad reverse-items">
+        <div class="big-item">
+          <img [src]="third_ads_big_items[1].img" [routerLink]="['detail', third_ads_big_items[1].id]" alt="">
+        </div>
+        <div class="small-items">
+          <img [src]="item.img" [routerLink]="['detail',item.id]" alt="" *ngFor="let item of third_ads_small_left_items">
+        </div>
+
+      </div>
+    </div>
+    <!-- Third ads Container -->
+    <!-- Forth Container -->
+    <div class="forth-container">
+      <div class="stand-ads">
+        <div class="top-ad">
+          <img [src]="forth_container_top_ads[0].img" [routerLink]="['detail', forth_container_top_ads[0].route]" alt="">
+        </div>
+        <div class="bottom-ads">
+          <img [src]="item.img" [routerLink]="['detail', item.route]" alt="" *ngFor="let item of forth_container_rightSide_bottom_ads">
+        </div>
+      </div>
+      <div class="category-container">
+        <app-category-slider class="category-swiper"></app-category-slider>
+      </div>
+      <div class="stand-ads">
+        <div class="top-ad">
+          <img [src]="forth_container_top_ads[1].img" [routerLink]="['detail', forth_container_top_ads[1].route]" alt="">
+        </div>
+        <div class="bottom-ads">
+          <img [src]="item.img" [routerLink]="['detail', item.route]" alt="" *ngFor="let item of forth_container_leftSide_bottom_ads">
+        </div>
+      </div>
+    </div>
+    <!-- End of Forth Container -->
+    <!-- Common Covered slider -->
+    <div class="covered-slider-container ">
+      <div class="cover">
+        <img src="./../../../assets/images/wowbox.png" alt=""> شگفت انگیز
+        <button class="circle-button">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+      </div>
+      <swiper class="covered-swiper" [spaceBetween]="3" [autoplay]="true" [slidesPerView]="'auto'">
+        <ng-template class="normal-swiperSlide" swiperSlide *ngFor="let item of wow_off_items">
+          <div class="box" [routerLink]="['detail', item.id]">
+            <img [src]="item.img" alt="">
+            <div class="specifies">
+
+              <div class="price">{{item.price | number:'1.0'}} ت</div>
+              <div class="other-price">{{item.other_price | number:'1.0'}} ت</div>
+              <div class="off">{{item.off}} %</div>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <!-- End of Common Covered slider -->
+    <!-- Two Horizontal ads Container -->
+    <div class="two-horizontal-ads-container">
+      <a [href]="item.route" target="_blank" *ngFor="let item of two_horizontal_ads">
+        <img [src]="item.img" alt="">
+      </a>
+    </div>
+    <!-- End of Two Horizontal ads Container -->
+    <!-- Normal Slider Container -->
+    <div class="normal-slider-container">
+      <div class="heading">
+        <div class="title">محصولات پرفروش</div>
+        <div class="see-all-box" [routerLink]="['filter']">
+          <div>مشاهده همه</div>
+          <li class="fa fa-chevron-left"></li>
+        </div>
+      </div>
+      <swiper class="normal-swiper" [spaceBetween]="3" [slidesPerView]="'auto'">
+        <ng-template class="normal-slide" swiperSlide *ngFor="let item of best_seller_items">
+          <div class="box" [routerLink]="['detail', item.id]">
+            <img class="slide-img" [src]="item.img" alt="">
+            <div class="specifies">
+              <div class="name">{{item.name}}</div>
+              <div class="price">{{item.price | number:'1.0'}} تومان</div>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <!-- End of Normal Slider Container -->
+    <!-- Common Covered slider -->
+    <div class="covered-slider-container bg-blc">
+      <div class="cover">
+        <img src="./../../../assets/images/wowbox.png" alt="">
+        <button class="circle-button">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+
+      </div>
+      <swiper class="covered-swiper" [spaceBetween]="3" [slidesPerView]="'auto'">
+        <ng-template class="normal-swiperSlide
+        " swiperSlide *ngFor="let item of wow_off_items">
+          <div class="box" [routerLink]="['detail', item.id]">
+            <img [src]="item.img" alt="">
+            <div class="specifies">
+
+              <div class="price">{{item.price | number:'1.0'}} ت</div>
+              <div class="other-price">{{item.other_price | number:'1.0'}} ت</div>
+              <div class="off">{{item.off}} %</div>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <!-- End of Common Covered slider -->
+  </div>
+</div>

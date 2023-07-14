@@ -1,0 +1,111 @@
+.mycontainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mycontainer .background{
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 36, 36, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.mycontainer .background .body{
+  /* width: fit-content;
+  height: fit-content;*/
+  padding: 15px;
+  overflow: auto;
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  height: calc(100% - 70px);
+  width: 100%;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.body .controls{
+  height: 7px;
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.controls .text{
+  font-weight: 600;
+  font-size: 15px;
+  color: red;
+}
+
+.controls .btns{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls button{
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: rgb(255, 80, 80);
+  font-size: 15px;
+  font-weight: bold;
+  transition: .2s all;
+}
+
+.controls button:hover{
+  background: rgb(246, 44, 44);
+  box-shadow: 2px 1px 4px rgb(158, 158, 158);
+}
+
+.controls .cancel-btn{
+  background: white;
+  color: rgb(255, 80, 80);
+  border: 1px solid rgb(255, 80, 80) !important;
+}
+
+.controls .cancel-btn:hover{
+  /* color: white; */
+  background: rgb(251, 252, 255);
+}
+
+.controls .ok-btn{
+  color: white;
+  background: rgb(255, 80, 80);
+}
+
+
+@media (min-width: 500px) {
+  .mycontainer .background .body{
+    /* background: red; */
+    width: 90%;
+    height: 90%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .mycontainer .background .body{
+    /* background: red; */
+    width: 55%;
+    height: 75%;
+  }
+}
+
+
+
