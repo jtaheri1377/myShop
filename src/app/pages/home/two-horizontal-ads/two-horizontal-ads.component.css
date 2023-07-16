@@ -1,0 +1,80 @@
+
+/* Two Horizontal ads Container */
+.two-horizontal-ads-container{
+  width: 100%;
+
+  padding:  10px 5px;
+  /* height: 350px; */
+  /* margin: 50px 0 ; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.two-horizontal-ads-container img{
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+}
+/* End of Two Horizontal ads Container */
+
+
+
+/* Big mobile styles */
+@media (min-width: 425px) {
+
+  /* Two Horizontal ads Container */
+  .two-horizontal-ads-container{
+    width: 100%;
+
+    padding:  10px 5px;
+    /* height: 350px; */
+    /* margin: 50px 0 ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .two-horizontal-ads-container a{
+    width: 100%;
+    height: fit-content;
+  }
+
+  .two-horizontal-ads-container img{
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  /* End of Two Horizontal ads Container */
+}
+
+
+@media (min-width:500px){
+  /* Two Horizontal ads Container */
+  .two-horizontal-ads-container{
+    padding:  10px 5px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .two-horizontal-ads-container a{
+    width: calc(50% - 12px);
+    max-width: 560px;
+  }
+
+  .two-horizontal-ads-container img{
+   width: 100%;
+  }
+  /* End of Two Horizontal ads Container */
+
+  }
+  /* End of Big mobile styles */

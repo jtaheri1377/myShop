@@ -24,6 +24,13 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SidebarDirective } from './directives/sidebar/sidebar.directive';
 import { LocationComponent } from './shared/location/location.component';
 import { AddressListComponent } from './pages/address-list/address-list.component';
+import { FirstSliderComponent } from './pages/home/first-slider/first-slider.component';
+import { TitlesComponent } from './pages/home/titles/titles.component';
+import { ThirdAdsComponent } from './pages/home/third-ads/third-ads.component';
+import { ForthContainerComponent } from './pages/home/forth-container/forth-container.component';
+import { CoveredSliderComponent } from './pages/home/covered-slider/covered-slider.component';
+import { NormalSliderComponent } from './pages/home/normal-slider/normal-slider.component';
+import { TwoHorizontalAdsComponent } from './pages/home/two-horizontal-ads/two-horizontal-ads.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,14 @@ import { AddressListComponent } from './pages/address-list/address-list.componen
     SidebarComponent,
     SidebarDirective,
     LocationComponent,
-    AddressListComponent
+    AddressListComponent,
+    FirstSliderComponent,
+    TitlesComponent,
+    ThirdAdsComponent,
+    ForthContainerComponent,
+    CoveredSliderComponent,
+    NormalSliderComponent,
+    TwoHorizontalAdsComponent
   ],
   imports: [
     BrowserModule,

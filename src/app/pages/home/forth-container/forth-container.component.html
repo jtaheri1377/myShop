@@ -1,0 +1,23 @@
+    <!-- Forth Container -->
+    <div class="forth-container">
+      <div class="stand-ads">
+        <div class="top-ad">
+          <img [src]="forth_container_top_ads[0].img" [routerLink]="['detail', forth_container_top_ads[0].route]" alt="">
+        </div>
+        <div class="bottom-ads">
+          <img [src]="item.img" [routerLink]="['detail', item.route]" alt="" *ngFor="let item of forth_container_rightSide_bottom_ads">
+        </div>
+      </div>
+      <div class="category-container">
+        <app-category-slider class="category-swiper"></app-category-slider>
+      </div>
+      <div class="stand-ads">
+        <div class="top-ad">
+          <img [src]="forth_container_top_ads[1].img" [routerLink]="['detail', forth_container_top_ads[1].route]" alt="">
+        </div>
+        <div class="bottom-ads">
+          <img [src]="item.img" [routerLink]="['detail', item.route]" alt="" *ngFor="let item of forth_container_leftSide_bottom_ads">
+        </div>
+      </div>
+    </div>
+    <!-- End of Forth Container -->

@@ -17,7 +17,7 @@ import SwiperCore, {
 } from 'swiper';
 // import { BehaviorSubject } from "rxjs";
 import Swiper from "swiper/types/swiper-class";
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 // import {SwiperComponent} from "swiper/angular";
 
 
@@ -28,21 +28,20 @@ import { Observable } from 'rxjs';
   // encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
+  newProducts: any;
   best_seller_items: any;
   two_horizontal_ads: any;
   wow_off_items: any;
-  forth_container_leftSide_bottom_ads: any;
-  forth_container_rightSide_bottom_ads: any;
-  forth_container_top_ads: any;
-  third_ads_small_left_items: any;
-  third_ads_small_right_items: any;
-  third_ads_big_items: any | Observable<any> = [{ id: '', img: '' }];
   swiperConfig: any;
-  titles: any;
   location = false;
   overlay = false;
   sidebarWidth = "300px";
-  firstSliderItems: any;
+  sources = [
+    this.http.getAll("wow_off_items"),
+    this.http.getAll("wow_off_items"),
+    this.http.getAll("best_seller_items"),
+    this.http.getAll("two_horizontal_ads"),
+  ]
 
   constructor(private http: HttpService,
     private filterSrv: FilterService,
@@ -74,46 +73,11 @@ export class HomeComponent implements OnInit {
       }
     };
 
-    this.http.getAll("firstSliderItems").subscribe(res => {
-      this.firstSliderItems = res;
-    })
-    this.http.getAll("titles").subscribe(res => {
-      this.titles = res;
-    })
-    this.http.getAll("third_ads_big_items").subscribe(res => {
-      this.third_ads_big_items = res;
-    })
-    this.http.getAll("third_ads_small_right_items").subscribe(res => {
-      this.third_ads_small_right_items = res;
-    })
-    this.http.getAll("third_ads_small_left_items").subscribe(res => {
-      this.third_ads_small_left_items = res;
-    })
-    this.http.getAll("forth_container_top_ads").subscribe(res => {
-      this.forth_container_top_ads = res;
-    })
-    this.http.getAll("forth_container_rightSide_bottom_ads").subscribe(res => {
-      this.forth_container_rightSide_bottom_ads = res;
-    })
-    this.http.getAll("forth_container_leftSide_bottom_ads").subscribe(res => {
-      this.forth_container_leftSide_bottom_ads = res;
-    })
-    this.http.getAll("wow_off_items").subscribe(res => {
-      this.wow_off_items = res;
-    })
-    this.http.getAll("two_horizontal_ads").subscribe(res => {
-      this.two_horizontal_ads = res;
-    })
-    this.http.getAll("best_seller_items").subscribe(res => {
-      this.best_seller_items = res;
-    })
-
+    forkJoin(this.sources).subscribe(res => {
+      this.wow_off_items = res[0];
+      this.newProducts = res[1];
+      this.best_seller_items = res[2];
+      this.two_horizontal_ads = res[3];
+    });
   }
-
-  navigateToFilter(value: string) {
-    this.filterSrv.filterData = value;
-    this.filterSrv.SubjectFilterData.next(value);
-    this.router.navigate(['filter'])
-  }
-
 }

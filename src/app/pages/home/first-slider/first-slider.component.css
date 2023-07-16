@@ -1,0 +1,106 @@
+
+/* First Slider Section */
+.first-slider-container{
+  width: 100%;
+  height: fit-content;
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.right-box, .left-box{
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  width: 0;
+  /* min-width:130px; */
+  align-self: stretch;
+  /* margin: 0 8px; */
+  background-color: silver;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.right-box img, .left-box img{
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+  object-fit: cover;
+
+}
+
+.first-slider{
+  width: 100%;
+  height: fit-content;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  /* border-radius: 10px; */
+  height: 350px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.first-slider swiper {
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .firstSwiperSlide {
+  color: #000;
+  text-align: center;
+  line-height: 300px;
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+}
+
+
+:host ::ng-deep .firstSwiperSlide .firstSliderImage{
+  width:100% ;
+  height: 100%;
+  object-fit:cover;
+}
+/* End of First Slider Section */
+
+
+/* Loptop Styles */
+@media (min-width: 1024px) {
+
+  /* First Slider Section */
+  .first-slider-container{
+    /* margin-top: 10px; */
+    gap:15px;
+  }
+
+  .right-box, .left-box{
+    visibility: visible;
+    width: 140px;
+    /* margin: 0 15px; */
+    border-radius: 12px;
+  }
+
+  .first-slider{
+    width: 100%;
+    border-radius: 10px;
+    height: 350px;
+  }
+  /* End of First Slider Section */
+}
+
+
+
+/* Large Loptop Styles */
+@media (min-width: 1650px) {
+
+    /* First Slider Section */
+    .right-box, .left-box{
+      width: 160px;
+    }
+
+    .first-slider{
+      height: 420px;
+    }
+    /* End of First Slider Section */
+}

@@ -22,25 +22,6 @@ export class BasketComponent implements OnInit {
     })
   }
 
-
-  getHeight() {
-    if (this.location) {
-      return '100vh';
-    }
-    else {
-      return '100%'
-    }
-  }
-
-  getOverflow() {
-    if (this.location) {
-      return 'hidden';
-    }
-    else {
-      return 'auto'
-    }
-  }
-
   onClose_LocationBox(result: any) {
     console.log("onClose_LocationBox")
     this.location = false;

@@ -1,0 +1,146 @@
+
+/* Common-covered-slider */
+.covered-slider-container{
+  margin-top: 10px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  /* border-radius: 5px; */
+  padding: 10px 5px;
+  background: linear-gradient(to top,firebrick,rgb(206, 41, 41),rgb(134, 0, 0));
+}
+
+.covered-slider-container .cover{
+  visibility: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  font-size: 18px;
+  font-weight: 800;
+  gap:5px;
+}
+
+:host ::ng-deep .covered-slider-container  .covered-swiper{
+  width:100%;
+  height: 100%;
+}
+
+
+/* homepage wow slider slide */
+
+:host ::ng-deep .covered-slider-container  .covered-swiper .normal-swiperSlide{
+  padding: 8px ;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0  10px rgb(116, 116, 116);
+border: 1px solid rgb(170, 170, 170);
+cursor: pointer;
+
+}
+
+:host ::ng-deep .normal-swiperSlide .box{
+width: 100%;
+height: 100%;
+background-color: rgb(255, 255, 255);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+}
+
+:host ::ng-deep .normal-swiperSlide .box img{
+width: 100%;
+height: 72%;
+object-fit: cover;
+border-radius: 6px;
+}
+
+:host ::ng-deep .normal-swiperSlide .box .specifies{
+width: 100%;
+height: 28%;
+padding: 0px 0;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+}
+
+:host ::ng-deep .normal-swiperSlide .box .specifies .price{
+font-weight: 700;
+letter-spacing: 1px;
+}
+
+:host ::ng-deep .normal-swiperSlide .box .specifies .other-price{
+color: #888;
+font-size: 14px;
+text-decoration-line: line-through;
+}
+
+:host ::ng-deep .normal-swiperSlide .box .specifies .off{
+align-self: flex-start;
+background-color: rgb(253, 69, 69);
+color: white;
+font-size: 15px;
+border-radius: 35px;
+padding: 0 10px;
+font-weight: 500;
+}
+/* End of Homepage wow slider slide */
+
+/* End of Common-covered-slider */
+
+/* Loptop Styles */
+@media (min-width: 1024px) {
+  /* Common-covered-slider */
+  .covered-slider-container{
+    margin: 10px 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 5px;
+    background: linear-gradient(to top,firebrick,rgb(206, 41, 41),rgb(134, 0, 0));
+  }
+
+  .covered-slider-container .cover{
+    width: 260px;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top,var(--color-primary-500),var(--color-primary-700));
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .covered-slider-container .cover img{
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+
+  .covered-slider-container .cover .circle-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+/* End of Common-covered-slider */
+
+
+  }
+  /* End of loptop Styles */
+

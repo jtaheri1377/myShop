@@ -1,0 +1,23 @@
+<!-- Common Covered slider -->
+<div class="covered-slider-container" #container>
+  <div class="cover">
+    <img src="./../../../assets/images/wowbox.png" alt=""> {{coverTitle}}
+    <button class="circle-button">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+  </div>
+  <swiper class="covered-swiper" [spaceBetween]="3" [autoplay]="true" [slidesPerView]="'auto'">
+    <ng-template class="normal-swiperSlide" swiperSlide *ngFor="let item of items">
+      <div class="box" [routerLink]="['detail', item.id]">
+        <img [src]="item.img" alt="">
+        <div class="specifies">
+
+          <div class="price">{{item.price | number:'1.0'}} ت</div>
+          <div class="other-price">{{item.other_price | number:'1.0'}} ت</div>
+          <div class="off">{{item.off}} %</div>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+</div>
+<!-- End of Common Covered slider -->

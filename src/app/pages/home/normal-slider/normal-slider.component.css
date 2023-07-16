@@ -1,0 +1,105 @@
+
+
+/* Normal Slider Container */
+.normal-slider-container{
+  width: 100%;
+  height: 370px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(65, 58, 95); */
+}
+
+.normal-slider-container .heading{
+  width: 100%;
+  height: 55px;
+  padding: 0 5PX;
+  border-radius: 8px;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.normal-slider-container .heading .title{
+  font-size: 17px;
+  font-weight: 700;
+  color: rgb(121, 29, 29);
+}
+
+.normal-slider-container .heading .see-all-box{
+  display: flex;
+  gap:5px;
+  align-items: center;
+  margin: 0 5px;
+  color: rgb(28, 28, 80);
+  font-weight: 700;
+  padding: 3px 5px;
+  transition: all .3s;
+}
+
+.normal-slider-container .heading .see-all-box:hover{
+ background-color: rgb(217, 243, 255);
+  font-weight: 800;
+  border-radius: 6px;
+  /* font-size: 15px; */
+}
+
+.normal-slider-container .swiper{
+  width: 100%;
+  height: 100%;
+  margin-top: 6px;
+  background-color: rgba(89, 89, 221, 0.5);
+}
+/*
+.normal-swiper .normal-slide .box{
+  width: 100%;
+  height: 100%;
+} */
+
+:host ::ng-deep  .normal-slide{
+  width: 190px;
+  height: 100%;
+  padding: 10px;
+  /* background-color: forestgreen; */
+}
+
+:host ::ng-deep .normal-swiper .normal-slide .box{
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(223, 225, 255);
+}
+
+:host ::ng-deep .normal-swiper .normal-slide .box .slide-img {
+  width: 100%;
+  border-radius: 5px;
+  height: 75%;
+  object-fit: cover;
+}
+
+:host ::ng-deep .normal-swiper .normal-slide .box .specifies {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: rgb(90, 1, 1);
+  text-align: center;
+}
+
+/*
+.normal-slide .box .sepcifies .name {
+  font-weight: 800;
+  color: firebrick;
+  text-align: center;
+} */

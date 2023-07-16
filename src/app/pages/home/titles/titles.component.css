@@ -1,0 +1,103 @@
+
+/* Titles Slider */
+.titles{
+  width: 100%;
+  height: fit-content;
+  margin-top: 8px;
+  width: 100%;
+  z-index: -1 !important;
+}
+
+.titles .swiper{
+  width: 100%;
+  height: fit-content;
+}
+
+:host ::ng-deep .titles-swiper-slide{
+  width: fit-content;
+}
+
+.titles .titleBox{
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 60px;
+  background-color: rgb(236, 236, 236);
+  padding: 2px 5px;
+  display: flex;
+  /* width: fit-content; */
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+  padding-left:10px;
+  cursor: pointer;
+}
+
+.titles .titleBox .imageTitle{
+  width: 33px;
+  height: 33px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.titles .titleBox .titleText{
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+/* End of Titles Slider */
+
+
+/* Loptop Styles */
+@media (min-width: 1024px) {
+
+  /* Titles Slider */
+  .titles{
+    margin: 8px 0;
+    /* padding: 0 10px; */
+  }
+
+  .titles .titleBox{
+    padding: 4px 7px;
+  }
+
+  .titles .titleBox .imageTitle{
+    width: 37px;
+    height: 37px;
+  }
+
+  .titles .titleBox .titleText{
+    font-size: 15px;
+    font-weight: 600;
+  }
+  /* End of Titles Slider */
+}
+
+
+
+/* Large Loptop Styles */
+@media (min-width: 1650px) {
+
+  /* Titles Slider */
+  .titles{
+    margin: 8px 0;
+    padding: 0 60px;
+  }
+
+  .titles .titleBox{
+    padding: 6px 8px;
+  }
+
+  .titles .titleBox .imageTitle{
+    width: 40px;
+    height: 40px;
+  }
+
+  .titles .titleBox .titleText{
+    font-size: 18px;
+    font-weight: 800;
+  }
+  /* End of Titles Slider */
+}

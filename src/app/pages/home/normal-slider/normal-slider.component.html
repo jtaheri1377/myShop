@@ -1,0 +1,22 @@
+<!-- Normal Slider Container -->
+<div class="normal-slider-container">
+  <div class="heading">
+    <div class="title">{{title}}</div>
+    <div class="see-all-box" [routerLink]="['filter']">
+      <div>مشاهده همه</div>
+      <li class="fa fa-chevron-left"></li>
+    </div>
+  </div>
+  <swiper class="normal-swiper" [spaceBetween]="3" [slidesPerView]="'auto'">
+    <ng-template class="normal-slide" swiperSlide *ngFor="let item of items">
+      <div class="box" [routerLink]="['detail', item.id]">
+        <img class="slide-img" [src]="item.img" alt="">
+        <div class="specifies">
+          <div class="name">{{item.name}}</div>
+          <div class="price">{{item.price | number:'1.0'}} تومان</div>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+</div>
+<!-- End of Normal Slider Container -->

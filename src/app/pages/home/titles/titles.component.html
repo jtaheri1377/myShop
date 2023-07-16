@@ -1,0 +1,12 @@
+ <!-- Titles -->
+ <div class="titles">
+  <swiper class="swiper" [slidesPerView]="'auto'" [mousewheel]="true" [spaceBetween]="10" [navigation]="true" dir="rtl">
+    <ng-template class="titles-swiper-slide" swiperSlide *ngFor="let title of titles">
+      <div class="titleBox" (click)="navigateToFilter(title.text)">
+        <img class="imageTitle" [src]="title.img">
+        <div class="titleText">{{title.text}}</div>
+      </div>
+    </ng-template>
+  </swiper>
+</div>
+<!-- End of Titles -->

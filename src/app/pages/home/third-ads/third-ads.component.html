@@ -1,0 +1,21 @@
+  <!-- Third ads Container -->
+  <div class="third-ads-container">
+    <div class="box-ad ">
+      <div class="big-item">
+        <img [src]="third_ads_big_items[0].img" [routerLink]="['detail', third_ads_big_items[0].id]" alt="">
+      </div>
+      <div class="small-items">
+        <img [src]="item.img" [routerLink]="['detail', item.id]" alt="" *ngFor="let item of third_ads_small_right_items">
+      </div>
+    </div>
+    <div class="box-ad reverse-items">
+      <div class="big-item">
+        <img [src]="third_ads_big_items[1].img" [routerLink]="['detail', third_ads_big_items[1].id]" alt="">
+      </div>
+      <div class="small-items">
+        <img [src]="item.img" [routerLink]="['detail',item.id]" alt="" *ngFor="let item of third_ads_small_left_items">
+      </div>
+
+    </div>
+  </div>
+  <!-- Third ads Container -->
